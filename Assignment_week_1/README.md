@@ -103,7 +103,7 @@ df.to_csv("cleaned_dataset.csv", index=False)
 ## Output Files
 
 ```text
-├── Basic_Data_Exploration_Cleaning.ipynb
+├── Basic_Data_Exploration_and_Cleaning.ipynb
 ├── cleaned_dataset.csv
 └── README.md
 ```
