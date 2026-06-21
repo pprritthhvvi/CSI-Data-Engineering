@@ -2,83 +2,137 @@
 
 ## Objective
 
-The objective of this assignment is to learn Python basics and perform data exploration and data cleaning using the Pandas library. The dataset used is a shopping dataset containing product-related information.
+The objective of this assignment is to perform basic data exploration and cleaning on a shopping dataset using the Pandas library in Python. The tasks include loading data, exploring its structure, handling missing values, removing duplicates, filtering records, creating derived columns, and saving the cleaned dataset.
 
 ---
 
-## Dataset
+## Dataset Description
 
-**File Used:** `Combined_dataset.csv`
+The dataset contains product-related information such as:
 
-The dataset contains product information such as category, prices, ratings, seller details, reviews, and other shopping-related attributes.
+- Product ID
+- Product Title
+- Product Description
+- Rating
+- Ratings Count
+- Initial Price
+- Discount
+- Final Price
+- Currency
+- Category
+- Seller Information
+- Product Specifications
+- Delivery Options
+- And other product attributes
 
 ---
 
 ## Tools and Libraries Used
 
-* Python
-* Pandas
-* NumPy
-* Matplotlib
-* Seaborn
-* Jupyter Notebook
+- Python
+- Pandas
+- NumPy
+- Jupyter Notebook
 
 ---
 
-## Steps Performed
+## Tasks Performed
 
-### Step 1: Load the Dataset
+### 1. Data Loading
+- Loaded the dataset using `pd.read_csv()`.
 
-* Imported the required libraries.
-* Loaded the CSV file into a Pandas DataFrame.
+### 2. Data Exploration
+Performed basic exploration using:
+- `head()`
+- `tail()`
+- `shape`
+- `columns`
+- `dtypes`
+- `info()`
 
-### Step 2: Explore the Dataset
+### 3. Missing Value Handling
+- Identified missing values using `isnull().sum()`.
+- Filled missing categorical values with `"Unknown"`.
+- Filled missing numerical values using the median of the respective column.
 
-* Displayed the first 5 rows using `head()`.
-* Displayed the last 5 rows using `tail()`.
-* Checked dataset shape.
-* Viewed column names.
-* Checked data types using `dtypes`.
-* Generated dataset information using `info()`.
-* Generated statistical summary using `describe()`.
+### 4. Duplicate Record Removal
+- Checked duplicate rows using `duplicated()`.
+- Removed duplicates using `drop_duplicates()`.
 
-### Step 3: Handle Missing Values
+### 5. Column Selection
+Selected important columns such as:
+- `title`
+- `category`
 
-* Identified missing values using `isnull().sum()`.
-* Filled numerical missing values with the mean value.
-* Filled categorical missing values with the mode value.
+### 6. Data Filtering
+Filtered products with ratings greater than 4.
 
-### Step 4: Perform Basic Operations
+Example:
 
-* Selected specific columns from the dataset.
-* Filtered rows based on conditions.
+```python
+filtered_df = df[df["rating"] > 4]
+```
 
-### Step 5: Remove Duplicate Records
+### 7. Derived Column Creation
 
-* Checked the number of duplicate rows.
-* Removed duplicate records using `drop_duplicates()`.
+As required in the assignment, a new column was created:
 
-### Step 6: Data Visualization
+```python
+df["quantity"] = 1
+df["total_amount"] = df["initial_price"] * df["quantity"]
+```
 
-* Created a bar chart showing the top product categories in the dataset.
-* Visualized category distribution using Matplotlib.
+Additional derived column:
 
-### Step 7: Save the Cleaned Dataset
+```python
+df["discount_amount"] = (
+    df["initial_price"] * df["discount"] / 100
+)
+```
 
-* Saved the cleaned dataset as:
+### 8. Export Cleaned Dataset
 
-`cleaned_shopping_dataset.csv`
+The cleaned dataset was saved as:
+
+```python
+df.to_csv("cleaned_dataset.csv", index=False)
+```
 
 ---
 
 ## Output Files
 
-1. `Basic_Data_Exploration_and_Cleaning.ipynb`
-2. `cleaned_shopping_dataset.csv`
-3. `README.md`
+```text
+├── Basic_Data_Exploration_Cleaning.ipynb
+├── cleaned_dataset.csv
+└── README.md
+```
+
+---
+
+## Dataset Summary
+
+| Description | Value |
+|------------|--------|
+| Dataset Type | Shopping Dataset |
+| Original Columns | 24 |
+| Added Columns | quantity, total_amount, discount_amount |
+| Final Output | cleaned_dataset.csv |
+
+---
+
+## Key Learning Outcomes
+
+- Data loading using Pandas
+- Dataset exploration techniques
+- Handling missing values
+- Removing duplicate records
+- Filtering data using conditions
+- Creating derived columns
+- Exporting cleaned datasets
 
 ---
 
 ## Conclusion
 
-This assignment helped in understanding basic data exploration and data cleaning techniques using Pandas. Missing values were handled, duplicate records were removed, basic filtering operations were performed, and the cleaned dataset was successfully saved for further analysis.
+The dataset was successfully explored and cleaned using Pandas. Missing values and duplicate records were handled appropriately, relevant columns were selected, rows were filtered based on ratings, and derived columns (`total_amount` and `discount_amount`) were created. Finally, the cleaned dataset was exported as a CSV file for further analysis.
