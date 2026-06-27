@@ -90,12 +90,72 @@ SELECT * FROM customers WHERE firstname LIKE '%r%'
 
 
 
+SELECT COUNT(*) AS TotalCustomers
+FROM customers;
 
+SELECT COUNT(*) AS USACustomers
+FROM customers
+WHERE Country = 'USA';
 
+SELECT COUNT(*) AS USACustomers
+FROM customers
+WHERE Country = 'USA';
 
+SELECT SUM(Score) AS TotalScore
+FROM customers;
 
+SELECT SUM(Score) AS GermanyScore
+FROM customers
+WHERE Country = 'Germany';
 
+SELECT AVG(Score) AS AverageScore
+FROM customers;
 
+SELECT AVG(Score) AS AvgUSA
+FROM customers
+WHERE Country = 'USA';
 
+SELECT MIN(Score) AS LowestScore
+FROM customers;
+
+SELECT MAX(Score) AS HighestScore
+FROM customers;
+
+SELECT Country,
+       COUNT(*) AS TotalCustomers
+FROM customers
+GROUP BY Country;
+
+SELECT Country,
+       SUM(Score) AS TotalScore
+FROM customers
+GROUP BY Country;
+
+SELECT Country,
+       AVG(Score) AS AverageScore
+FROM customers
+GROUP BY Country;
+
+SELECT Country,
+       MAX(Score) AS HighestScore
+FROM customers
+GROUP BY Country;
+
+SELECT Country,
+       MIN(Score) AS LowestScore
+FROM customers
+GROUP BY Country;
+
+SELECT Country,
+       SUM(Score) AS TotalScore
+FROM customers
+GROUP BY Country
+ORDER BY TotalScore DESC;
+
+SELECT Country,
+       SUM(Score) AS TotalScore
+FROM customers
+GROUP BY Country
+HAVING SUM(Score) > 800;
 
 
