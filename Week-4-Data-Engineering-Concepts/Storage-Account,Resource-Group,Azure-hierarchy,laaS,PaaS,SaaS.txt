@@ -1,0 +1,74 @@
+Module 1: Cloud Concepts
+
+Why Cloud Services?
+. Describe the terms Infrastructure-as-a-service
+(laaS), Platform-as-a-service (PaaS) and Software-
+as-a-service (SaaS)
+. Understand the difference between Public, Private
+and Hybrid Cloud Models
+
+Benefits of working with the Cloud
+. Cloud computing is typically cheaper to use.
+" Lower operating
+Run infrastructure more efficiently
+Scale your infrastructure as your business evolves
+· Quicker innovation and production
+Development teams delivering features at record speeds
+. Modern day resources for modern day needs
+" Nearly limitless pool of raw compute, storage, and networking components
+Speech recognition and cognitive services
+Analytics services deliver telemetry data from software and devices
+
+Cloud vs. On-Prem
+. High Availability
+. Scalability
+. Elasticity
+Agility
+. Geo-Distribution
+. Disaster Recovery
+. Operational Expenditure (OpEx) vs. Capital Expenditure (CapEx)
+
+Cloud Service Models
+· Infrastructure-as-a-service (laaS)
+· Platform-as-a-service (PaaS)
+· Software-as-a-service (Saas)
+
+Infrastructure-as-a-Service (laaS)
+. No CapEx
+· Agility!
+. "Shared Responsibility" Management Model
+. Consumption Based - Pay only for what you use
+
+Platform-as-a-Service (PaaS)
+. Cutting-edge
+. Hosted Environment
+. Productivity
+Disadvantage - Environment may not meet App
+Requirements
+
+Software-as-a-Service (PaaS)
+· i.e. Office 365
+. development tools
+
+Cloud Deployment Models
+. Public Cloud
+. Private Cloud
+. Hybrid Cloud
+
+
+Module 2: Core Azure Services
+
+Core Azure Architectural Components-
+Management
+groups
+Subscriptions
+Resource
+groups
+SQL
+Resources
+
+MANAGEMENT GROUP FACTS-
+·Up to 10,000 groups in a
+single directory
+% layers of depth
+. 1 parent, many children

@@ -1,0 +1,26 @@
+# Pipeline Architecture
+
+```text
+                 Superstore.csv
+                        │
+                        ▼
+                data/source
+                        │
+                        ▼
+              get_metadata.py
+                        │
+                        ▼
+                metadata.json
+                        │
+                        ▼
+                 copy_data.py
+                        │
+                        ▼
+             data/destination
+                        │
+                        ▼
+                 validate.py
+                        │
+                        ▼
+             pipeline.py (Automation)
+```

@@ -1,0 +1,404 @@
+============================================================
+TYPES OF ETL, ELT & INCREMENTAL LOADING
+============================================================
+
+1. TYPES OF ETL
+
+A. Batch ETL
+
+Definition:
+Processes a large amount of data at scheduled intervals.
+
+Process:
+Source → Extract → Transform → Load
+
+Examples:
+• Daily sales report
+• Monthly payroll
+• Weekly inventory report
+
+Advantages:
+• Easy to implement
+• Good for historical data
+• Cost effective
+
+Disadvantages:
+• Data is not real-time
+• Delay in reporting
+
+------------------------------------------------------------
+
+B. Real-Time ETL (Streaming ETL)
+
+Definition:
+Processes data immediately after it is generated.
+
+Process:
+Source → Extract → Transform → Load (Continuous)
+
+Examples:
+• ATM Transactions
+• Online Banking
+• Stock Market
+• Food Delivery Apps
+• Ride Booking Apps
+
+Advantages:
+• Real-time analytics
+• Faster decision making
+• Immediate updates
+
+Disadvantages:
+• Complex architecture
+• Higher infrastructure cost
+
+============================================================
+
+2. TYPES OF ELT
+
+A. Batch ELT
+
+Definition:
+Loads raw data into the warehouse in batches and transforms it later.
+
+Examples:
+• Daily customer data
+• Monthly financial reports
+
+------------------------------------------------------------
+
+B. Streaming ELT
+
+Definition:
+Loads streaming data into the warehouse continuously and transforms it when needed.
+
+Examples:
+• IoT Sensors
+• Clickstream Data
+• Website Logs
+• Social Media Feeds
+
+============================================================
+
+3. TYPES OF DATA LOADING
+
+A. Initial Load
+
+Definition:
+Loads the complete dataset only once.
+
+Example:
+Load all employee records into the warehouse.
+
+Advantages:
+• Simple
+• Complete data available
+
+Disadvantages:
+• Slow
+• Large storage required
+
+------------------------------------------------------------
+
+B. Full Load
+
+Definition:
+Deletes old data and reloads the complete dataset every execution.
+
+Example:
+
+Day 1
+100000 records loaded
+
+Day 2
+Delete all records
+Reload 100500 records
+
+Advantages:
+• Simple implementation
+• No need to track changes
+
+Disadvantages:
+• Slow
+• High network usage
+• High storage usage
+
+------------------------------------------------------------
+
+C. Incremental Load
+
+Definition:
+Loads only new, updated and deleted records.
+
+Example:
+Only today's new orders are loaded.
+
+Advantages:
+• Fast
+• Low storage
+• Better performance
+
+Disadvantages:
+• More complex
+
+============================================================
+
+4. TYPES OF INCREMENTAL LOADING
+
+A. Insert Only
+
+Loads only new records.
+
+Example
+
+Yesterday
+
+ID 1
+ID 2
+
+Today
+
+ID 3
+
+Only ID 3 is loaded.
+
+------------------------------------------------------------
+
+B. Insert + Update
+
+Loads new records and updates modified records.
+
+Example
+
+Salary
+
+Old = 50000
+
+New = 70000
+
+Only updated record is loaded.
+
+------------------------------------------------------------
+
+C. Insert + Update + Delete
+
+Handles all three operations.
+
+Insert
+Update
+Delete
+
+This is the most common approach used in production.
+
+============================================================
+
+5. CHANGE DETECTION METHODS
+
+A. Timestamp
+
+Uses LastModifiedDate column.
+
+Example
+
+2026-07-10 10:30:00
+
+------------------------------------------------------------
+
+B. Change Data Capture (CDC)
+
+Tracks
+
+• INSERT
+• UPDATE
+• DELETE
+
+Examples
+
+• SQL Server CDC
+• Debezium
+• Oracle GoldenGate
+
+------------------------------------------------------------
+
+C. Hash Comparison
+
+Old Hash
+
+A4F12
+
+New Hash
+
+C8D91
+
+Different Hash → Record Changed
+
+------------------------------------------------------------
+
+D. Auto Increment ID
+
+Example
+
+Last Loaded ID = 100
+
+Current IDs
+
+101
+102
+103
+
+Only these IDs are loaded.
+
+============================================================
+
+6. SLOWLY CHANGING DIMENSIONS (SCD)
+
+Type 0
+
+No changes allowed.
+
+Example:
+Date Dimension
+
+------------------------------------------------------------
+
+Type 1
+
+Overwrite old value.
+
+Old City = Delhi
+
+New City = Mumbai
+
+Result
+
+City = Mumbai
+
+History is lost.
+
+------------------------------------------------------------
+
+Type 2
+
+Maintain history.
+
+CustomerID  City      StartDate   EndDate
+
+101         Delhi     2024-01-01 2025-06-30
+101         Mumbai    2025-07-01 NULL
+
+History preserved.
+
+------------------------------------------------------------
+
+Type 3
+
+Store previous value in another column.
+
+CustomerID
+
+Current City = Mumbai
+
+Previous City = Delhi
+
+Limited history maintained.
+
+============================================================
+
+7. WHEN TO USE
+
+Batch ETL
+• Historical reporting
+• Payroll
+• Daily reports
+
+Real-Time ETL
+• Banking
+• Fraud Detection
+• Live Dashboards
+
+Initial Load
+• First migration
+
+Full Load
+• Small datasets
+
+Incremental Load
+• Large datasets
+• Daily ETL Jobs
+• Production Systems
+
+============================================================
+
+INTERVIEW QUESTIONS
+
+1. Difference between Initial Load, Full Load and Incremental Load?
+
+Initial Load
+Complete data loaded once.
+
+Full Load
+Complete data loaded every run.
+
+Incremental Load
+Only changed data loaded.
+
+------------------------------------------------------------
+
+2. Which loading method is most commonly used?
+
+Incremental Loading.
+
+------------------------------------------------------------
+
+3. What are the types of Incremental Loading?
+
+• Insert Only
+• Insert + Update
+• Insert + Update + Delete
+
+------------------------------------------------------------
+
+4. What are SCD Types?
+
+Type 0
+Type 1
+Type 2
+Type 3
+
+------------------------------------------------------------
+
+5. Which SCD type is used most in Data Warehousing?
+
+Type 2 because it preserves historical data.
+
+============================================================
+
+QUICK REVISION
+
+ETL
+Extract → Transform → Load
+
+ELT
+Extract → Load → Transform
+
+Loading Types
+• Initial Load
+• Full Load
+• Incremental Load
+
+Incremental Types
+• Insert
+• Insert + Update
+• Insert + Update + Delete
+
+Change Detection
+• Timestamp
+• CDC
+• Hash
+• Auto Increment ID
+
+SCD Types
+• Type 0
+• Type 1
+• Type 2
+• Type 3

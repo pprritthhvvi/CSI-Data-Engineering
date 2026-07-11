@@ -1,0 +1,651 @@
+============================================================
+BATCH PROCESSING vs STREAM PROCESSING
+============================================================
+
+1. What is Data Processing?
+
+Definition:
+Data Processing is the process of collecting, transforming, analyzing and storing data to generate meaningful information.
+
+There are two major types:
+
+1. Batch Processing
+2. Stream Processing
+
+============================================================
+
+2. Batch Processing
+
+Definition
+
+Batch Processing is a method where data is collected over a period of time and processed together as a single batch.
+
+Process
+
+Data Source
+      ↓
+Store Data
+      ↓
+Batch Job
+      ↓
+Process Entire Dataset
+      ↓
+Output
+
+Characteristics
+
+• Data is processed in batches
+• High latency
+• Large amount of data
+• Scheduled execution
+• Historical analysis
+
+Examples
+
+• Payroll processing
+• Monthly salary
+• Bank statement generation
+• Daily sales report
+• Inventory report
+• Monthly electricity bill
+
+Advantages
+
+• Simple implementation
+• Efficient for huge datasets
+• Low processing cost
+• Easy scheduling
+
+Disadvantages
+
+• Not real-time
+• Delayed insights
+• Cannot react immediately
+
+============================================================
+
+3. Stream Processing
+
+Definition
+
+Stream Processing is a method where data is processed continuously as soon as it is generated.
+
+Process
+
+Data Source
+      ↓
+Continuous Events
+      ↓
+Stream Processing Engine
+      ↓
+Instant Processing
+      ↓
+Real-Time Output
+
+Characteristics
+
+• Continuous processing
+• Low latency
+• Real-time
+• Event driven
+• Immediate analytics
+
+Examples
+
+• UPI Transactions
+• Credit Card Fraud Detection
+• Live GPS Tracking
+• Online Gaming
+• Food Delivery Tracking
+• Stock Market
+• IoT Sensors
+
+Advantages
+
+• Real-time insights
+• Immediate decision making
+• Instant alerts
+• Better customer experience
+
+Disadvantages
+
+• Complex architecture
+• Higher infrastructure cost
+• More difficult debugging
+
+============================================================
+
+4. Batch vs Stream Processing
+
+Feature                    Batch Processing             Stream Processing
+---------------------------------------------------------------------------
+Processing                 Batch                        Continuous
+Latency                    High                         Very Low
+Speed                      Slower                       Faster
+Data Size                  Large                        Small Events
+Execution                  Scheduled                    Continuous
+Analytics                  Historical                   Real-Time
+Storage                    Required First               Optional
+Complexity                 Easy                         Complex
+Cost                       Lower                        Higher
+
+============================================================
+
+5. Batch Processing Workflow
+
+Source Systems
+      ↓
+Collect Data
+      ↓
+Store Data
+      ↓
+Batch Processing
+      ↓
+Generate Reports
+      ↓
+Store Output
+
+Example
+
+Every night at 12 AM
+
+Process
+
+Today's Sales
+
+Generate Report
+
+Email Manager
+
+============================================================
+
+6. Stream Processing Workflow
+
+Sensors
+Website
+Mobile Apps
+IoT Devices
+
+      ↓
+
+Streaming Platform
+
+      ↓
+
+Kafka
+
+      ↓
+
+Spark Streaming
+
+      ↓
+
+Process Every Event
+
+      ↓
+
+Dashboard
+
+============================================================
+
+7. What is Stream Processing?
+
+Definition
+
+Stream Processing continuously processes incoming data immediately after it is generated without waiting for the complete dataset.
+
+Features
+
+• Continuous
+• Real-Time
+• Event Driven
+• Low Latency
+• Immediate Response
+
+Examples
+
+Customer makes payment
+
+↓
+
+Bank receives event
+
+↓
+
+Fraud Detection
+
+↓
+
+Transaction Approved
+
+Time Taken
+
+Few milliseconds
+
+============================================================
+
+8. Batch Processing Example
+
+Online Shopping
+
+Orders Received
+
+9 AM
+
+10 AM
+
+11 AM
+
+12 PM
+
+Process all orders together
+
+at
+
+1 PM
+
+Generate Report
+
+============================================================
+
+9. Stream Processing Example
+
+Uber
+
+Driver Location
+
+↓
+
+GPS Event
+
+↓
+
+Server
+
+↓
+
+Process Immediately
+
+↓
+
+Customer sees
+
+Live Driver Location
+
+============================================================
+
+10. Snapshot Analytics
+
+Definition
+
+Snapshot Analytics analyzes data collected at a specific point in time.
+
+Example
+
+Daily Sales Report
+
+Generated every night
+
+Only today's data
+
+Another Example
+
+Monthly Revenue Report
+
+Advantages
+
+• Easy reporting
+• Historical analysis
+• Better trend analysis
+
+============================================================
+
+11. Periodic Query
+
+Definition
+
+A query that runs automatically at fixed intervals.
+
+Examples
+
+Every Minute
+
+Every Hour
+
+Every Day
+
+Every Week
+
+Every Month
+
+Example
+
+SELECT SUM(amount)
+FROM sales;
+
+Runs every night at 11 PM.
+
+Use Cases
+
+• Daily Reports
+• Dashboard Refresh
+• Backup Jobs
+
+============================================================
+
+12. Recorded Event
+
+Definition
+
+A Recorded Event is an activity captured by a system.
+
+Examples
+
+Customer Login
+
+Order Placed
+
+Payment Success
+
+ATM Withdrawal
+
+Money Transfer
+
+Website Click
+
+Product Purchase
+
+Temperature Reading
+
+GPS Location
+
+============================================================
+
+13. Output Data
+
+Definition
+
+The final processed information produced after data processing.
+
+Examples
+
+Reports
+
+Dashboards
+
+Charts
+
+Notifications
+
+Alerts
+
+Machine Learning Input
+
+Business KPIs
+
+============================================================
+
+14. Real-Time Data Processing
+
+Definition
+
+Processing data immediately after it is generated.
+
+Examples
+
+Google Maps
+
+Food Delivery
+
+Netflix Recommendation
+
+UPI Payment
+
+Fraud Detection
+
+Online Banking
+
+Characteristics
+
+• Milliseconds response
+• Continuous
+• Event Driven
+
+============================================================
+
+15. Data Pipeline
+
+Definition
+
+A Data Pipeline is a series of steps that move data from the source to the destination.
+
+Pipeline
+
+Source
+
+↓
+
+Ingestion
+
+↓
+
+Processing
+
+↓
+
+Storage
+
+↓
+
+Analytics
+
+Example
+
+Website
+
+↓
+
+Kafka
+
+↓
+
+Spark Streaming
+
+↓
+
+Data Lake
+
+↓
+
+Power BI
+
+============================================================
+
+16. Popular Batch Processing Tools
+
+• Apache Hadoop
+• Apache Hive
+• Apache Spark
+• Informatica
+• Talend
+• SQL Server Agent
+• Cron Jobs
+
+============================================================
+
+17. Popular Stream Processing Tools
+
+• Apache Kafka
+• Apache Spark Streaming
+• Apache Flink
+• Apache Storm
+• Amazon Kinesis
+• Azure Event Hub
+• Google Pub/Sub
+
+============================================================
+
+18. When to Use Batch Processing
+
+• Payroll
+• Billing
+• Monthly Reports
+• Data Migration
+• Historical Analytics
+• Backup
+
+============================================================
+
+19. When to Use Stream Processing
+
+• Fraud Detection
+• Live Dashboard
+• GPS Tracking
+• IoT
+• Banking
+• Stock Market
+• Recommendation Systems
+• Social Media Feed
+
+============================================================
+
+20. Interview Questions
+
+Q1. What is Batch Processing?
+
+Processing data in groups or batches at scheduled intervals.
+
+------------------------------------------------------------
+
+Q2. What is Stream Processing?
+
+Processing data continuously as soon as it is generated.
+
+------------------------------------------------------------
+
+Q3. Difference between Batch and Stream Processing?
+
+Batch waits for complete data.
+
+Streaming processes each event immediately.
+
+------------------------------------------------------------
+
+Q4. What is Latency?
+
+The time between data generation and processing.
+
+------------------------------------------------------------
+
+Q5. Which has lower latency?
+
+Stream Processing.
+
+------------------------------------------------------------
+
+Q6. Which is cheaper?
+
+Batch Processing.
+
+------------------------------------------------------------
+
+Q7. Give examples of Batch Processing.
+
+Payroll
+Billing
+Daily Reports
+
+------------------------------------------------------------
+
+Q8. Give examples of Stream Processing.
+
+UPI
+Fraud Detection
+Uber
+Netflix
+IoT
+
+------------------------------------------------------------
+
+Q9. What is Snapshot Analytics?
+
+Analysis of data captured at a specific point in time.
+
+------------------------------------------------------------
+
+Q10. What is a Periodic Query?
+
+A query executed automatically at fixed time intervals.
+
+============================================================
+
+QUICK REVISION
+
+Batch Processing
+
+Collect Data
+      ↓
+Store
+      ↓
+Process Batch
+      ↓
+Output
+
+Examples
+
+Payroll
+Billing
+Reports
+
+------------------------------------------------------------
+
+Stream Processing
+
+Receive Event
+      ↓
+Process Immediately
+      ↓
+Output
+
+Examples
+
+UPI
+Uber
+Fraud Detection
+IoT
+
+------------------------------------------------------------
+
+Batch Tools
+
+Hadoop
+Hive
+Spark
+Talend
+Informatica
+
+------------------------------------------------------------
+
+Streaming Tools
+
+Kafka
+Spark Streaming
+Flink
+Storm
+Kinesis
+
+------------------------------------------------------------
+
+Key Terms
+
+Batch Processing
+Stream Processing
+Snapshot Analytics
+Periodic Query
+Recorded Event
+Output Data
+Data Pipeline
+Real-Time Processing
+Latency
+Kafka
+Spark Streaming
