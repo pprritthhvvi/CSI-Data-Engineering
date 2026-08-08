@@ -1,0 +1,21 @@
+=== Session 06: Run Instructions ===
+Date: 2026-08-08
+
+Project root: C:\Users\HP\Desktop\CSI-Data-Engineering\E-Commerce Order Analytics System
+
+Run the workflow in this order:
+1. python scripts/generate_data.py
+2. python scripts/clean_data.py
+3. python scripts/test_cases.py
+4. python scripts/load_database.py
+5. python scripts/report_cli.py --report revenue
+6. python scripts/report_cli.py --report top_customers
+7. python scripts/report_cli.py --report retention
+8. python scripts/report_cli.py --report products
+
+Expected outcome:
+- Raw data is generated
+- Cleaned CSV files are exported
+- The smoke test passes
+- MySQL tables are created and populated
+- CLI reports are printed to the terminal

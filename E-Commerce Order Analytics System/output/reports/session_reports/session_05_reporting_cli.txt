@@ -1,0 +1,5 @@
+=== Session 05: CLI Reporting ===
+Date: 2026-08-08
+Command: C:/Python313/python.exe .\\scripts\\report_cli.py --report revenue
+
+MySQL error: 2007 (HY000): Protocol mismatch; server version = 11, client version = 10

@@ -1,0 +1,9 @@
+=== Session 04: MySQL Loading ===
+Date: 2026-08-08
+Command: C:/Python313/python.exe .\\scripts\\load_database.py
+
+============================================================
+Loading cleaned datasets into MySQL
+============================================================
+Unexpected error: Could not connect to MySQL with the Python connector. Please verify the local MySQL server and credentials. Details: 2007 (HY000): Protocol mismatch; server version = 11, client version = 10
+Please verify that MySQL 8.x is running locally and that the server is reachable on the configured host/port.

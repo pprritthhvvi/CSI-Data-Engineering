@@ -1,0 +1,22 @@
+=== Session 01: Dataset Generation ===
+Date: 2026-08-08
+Command: C:/Python313/python.exe .\\scripts\\generate_data.py
+
+============================================================
+E-Commerce Order Analytics System
+============================================================
+Generating datasets...
+✔ customers.csv created
+✔ products.csv created
+✔ orders.csv created
+✔ order_items.csv created
+
+============================================================
+DATASET GENERATION COMPLETED
+============================================================
+Customers     : 500
+Products      : 500
+Orders        : 500
+Order Items   : 500
+
+All datasets saved successfully in data/raw/
